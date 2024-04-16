@@ -1,0 +1,38 @@
+<head>
+	<title>Flask app</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head> 
+
+{% block y %}
+
+<div class="LoginBox">
+
+	<h1> The Interrogator </h1>
+	<br>
+	<div class="ErrorMSG">
+		{{ get_flashed_messages()[0] }}
+	</div>
+	<form action="/login" method="POST">
+		<form action="" method="post" novalidate>
+			{{ form.hidden_tag() }}
+	
+			<div class="Label">
+				{{ form.username.label }}
+			</div>
+			{{ form.username() }}
+			<br>
+			<div class="Label">
+				{{ form.password.label }}
+			</div>
+			{{ form.password() }}
+			<br>
+			<br>
+			{{ form.submit() }}
+		<br>
+		<br>
+		<p>No account? register <a href="/register"> here </a></p>
+	</form>
+</div>
+
+
+{% endblock %}

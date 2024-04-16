@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        {% extends "navigation.html" %}
+        {% block content %}
+        <div class="index">
+            <div class="text">
+                <h1>Welcome to The Interrogator</h1>
+                <p>Questening is currently: ACTIVE</p>
+            </div>
+
+            <div class="QuesteningBox">
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1> General Quiz </h1>
+                <br>
+            
+                <form action="" method="post" novalidate>
+                    {{ form.hidden_tag() }}
+            
+                    <div class="Label">
+                        <p>What is your favorite cookie?</p>
+                    </div>
+                    {{ form.Question1() }}
+                    <br>
+                    <br>
+                    <div class="Label">
+                        <p>Which type of milk do you drink?</p>
+                    </div>
+                    {{ form.Question2() }}
+                    <br>
+                    <br>
+                    <div class="Label">
+                        <p>What is your favorite food?</p>
+                    </div>
+                    {{ form.Question3() }}
+                    <br>
+                    <br>
+                    <div class="Label">
+                        <p>How do you pay for stuff?</p>
+                    </div>
+                    {{ form.Question4() }}
+                    <br>
+                    <br>
+                    <div class="Label">
+                        <p>How are you today?</p>
+                    </div>
+                    {{ form.Question5() }}
+                    <br>
+                    <br>
+                    {{ form.submit() }}
+            
+            
+                </form>
+                <br>
+                <div class="ErrorMSG">
+                    {{ get_flashed_messages()[0] }}
+                </div>
+            </div>
+        </div>
+        
+        {% endblock %}
+    </body>
+</html>

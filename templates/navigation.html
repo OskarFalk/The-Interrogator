@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask app</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>        
+    <div class="Registation">
+        {% block y %}
+        {% endblock %}
+    
+        {% if session.name %}
+        You are registered as: {{ session.name }} <a href="/logout">logout</a>.
+        {% else %}
+        
+        {% endif %}
+    </div>
+        
+
+    <body>
+
+        <header>
+            <div class="container">
+                <h1 class="logo">The Interrogator</h1>
+                <strong><nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+                </nav></strong>
+            </div>
+        </header>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
